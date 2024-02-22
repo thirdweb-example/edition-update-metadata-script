@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ethers": "^5",
-    "@thirdweb-dev/sdk": "^4",
-    "dotenv": "^16.0.3"
+    "@thirdweb-dev/chains": "^0.1.73",
+    "@thirdweb-dev/sdk": "^4.0.37-nightly-a00917cca-20240222182638",
+    "dotenv": "^16.0.3",
+    "ethers": "^5"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",

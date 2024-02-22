@@ -1,8 +1,22 @@
 import { config } from "dotenv";
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
-import { readFileSync } from "fs";
+import { NFTMetadataInput, ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { BaseSepoliaTestnet } from "@thirdweb-dev/chains";
 
 config();
+
+// Chain to be used
+const chain = BaseSepoliaTestnet;
+
+// Contract address of the 1155 to be updated (EditionDrop contract)
+const editionContract = "0x638263e3eAa3917a53630e61B1fBa685308024fa";
+
+// Token ID to be updated
+const tokenId = 1;
+
+// New metadata to be set
+const newMeta: NFTMetadataInput = {
+  description: "My fixed description",
+};
 
 const main = async () => {
   if (!process.env.WALLET_PRIVATE_KEY) {
@@ -12,41 +26,24 @@ const main = async () => {
   try {
     const sdk = ThirdwebSDK.fromPrivateKey(
       process.env.WALLET_PRIVATE_KEY,
-      "mumbai",
+      chain,
       {
         secretKey: process.env.THIRDWEB_SECRET_KEY,
       }
     );
 
-    const contractAddress = await sdk.deployer.deployNFTDrop({
-      name: "My Drop",
-      primary_sale_recipient: "0x39Ab29fAfb5ad19e96CFB1E1c492083492DB89d4",
-    });
+    console.log("Contract address", editionContract, "on", chain.slug);
 
-    console.log("Contract address: ", contractAddress);
+    const contract = await sdk.getContract(editionContract);
+    const tokenMeta = await contract.erc1155.get(tokenId);
+    const { id, uri, ...oldMetadata } = tokenMeta.metadata;
+    const newMetadata = {
+      ...oldMetadata,
+      ...newMeta,
+    };
+    await contract.erc1155.updateMetadata(tokenId, newMetadata);
 
-    const contract = await sdk.getContract(contractAddress, "nft-drop");
-
-    const metadatas = [
-      {
-        name: "Blue Star",
-        description: "A blue star NFT",
-        image: readFileSync("assets/blue-star.png"),
-      },
-      {
-        name: "Red Star",
-        description: "A red star NFT",
-        image: readFileSync("assets/red-star.png"),
-      },
-      {
-        name: "Yellow Star",
-        description: "A yellow star NFT",
-        image: readFileSync("assets/yellow-star.png"),
-      },
-    ];
-
-    await contract.createBatch(metadatas);
-    console.log("Created batch successfully!");
+    console.log(`Updated token ${tokenId} successfully!`);
   } catch (e) {
     console.error("Something went wrong: ", e);
   }
