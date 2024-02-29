@@ -445,10 +445,10 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@thirdweb-dev/chains@0.1.74-nightly-a00917cca-20240222182638":
-  version "0.1.74-nightly-a00917cca-20240222182638"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/chains/-/chains-0.1.74-nightly-a00917cca-20240222182638.tgz#c9f48b429c94102bdf03ce59792b846add32ab95"
-  integrity sha512-/IoQbaxSXef7wRhtJ6HXLgPgnpaMzAQul/imSmLepfO7XGyc1rMAccz+UCIfjZXQtiQ9KdcJmEpfJupTbjRVnQ==
+"@thirdweb-dev/chains@0.1.74-nightly-8d2811dd1-20240229034452":
+  version "0.1.74-nightly-8d2811dd1-20240229034452"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/chains/-/chains-0.1.74-nightly-8d2811dd1-20240229034452.tgz#e91d605de9f86f05c692e9b5c9cad43f050ee6bc"
+  integrity sha512-OY45+HOhYAKOduwn7ctMdcx2w7HbMgRW+Ts6D0Ml9ZD410jviD/tzDkeNPWxAua8CjLXbTYQE1jH/MX9yfQYQg==
 
 "@thirdweb-dev/chains@^0.1.73":
   version "0.1.73"
@@ -501,12 +501,12 @@
     buffer-reverse "^1.0.1"
     treeify "^1.1.0"
 
-"@thirdweb-dev/sdk@^4.0.37-nightly-a00917cca-20240222182638":
-  version "4.0.37-nightly-a00917cca-20240222182638"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-4.0.37-nightly-a00917cca-20240222182638.tgz#90b74b95d3aaaf730e666ae22e32f9997e252576"
-  integrity sha512-ibTxaCSS4/+8PWKbwoXNwf1ylU3Kuyw4qI7THrMbBnwbYfGPAtKJIITqhRPPkMrWNTfPZaM8Bst/3OGVOH6gjQ==
+"@thirdweb-dev/sdk@^4.0.37-nightly-8d2811dd1-20240229034452":
+  version "4.0.37-nightly-8d2811dd1-20240229034452"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-4.0.37-nightly-8d2811dd1-20240229034452.tgz#015eca4143a6b8999fee2cea64aef289bfe4dce5"
+  integrity sha512-WryacX+ETZOa3BsWywGx52a04ofGxQLGEtTdqblrU3InxNvPCo30IjZLmhLJKCejKMTBnQHxKCSZtpBditBxdQ==
   dependencies:
-    "@thirdweb-dev/chains" "0.1.74-nightly-a00917cca-20240222182638"
+    "@thirdweb-dev/chains" "0.1.74-nightly-8d2811dd1-20240229034452"
     "@thirdweb-dev/contracts-js" "1.3.16"
     "@thirdweb-dev/crypto" "0.2.0"
     "@thirdweb-dev/generated-abis" "0.0.1"

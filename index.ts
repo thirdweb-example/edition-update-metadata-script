@@ -1,14 +1,14 @@
 import { config } from "dotenv";
 import { NFTMetadataInput, ThirdwebSDK } from "@thirdweb-dev/sdk";
-import { BaseSepoliaTestnet } from "@thirdweb-dev/chains";
+import { BaseSepoliaTestnet, Sepolia } from "@thirdweb-dev/chains";
 
 config();
 
 // Chain to be used
-const chain = BaseSepoliaTestnet;
+const chain = Sepolia;
 
 // Contract address of the 1155 to be updated (EditionDrop contract)
-const editionContract = "0x638263e3eAa3917a53630e61B1fBa685308024fa";
+const editionContract = "0x2fE3148351871439bEDE81730575d09586d10c37";
 
 // Token ID to be updated
 const tokenId = 1;
